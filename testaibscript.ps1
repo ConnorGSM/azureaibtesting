@@ -10,5 +10,5 @@ echo AIB Works > C:\AIB\aibproof.txt
 Start-Sleep -Seconds 120
 
 #region - INstall App
-C:\AIB\7Zip.exe /Silent
+C:\AIB\7Zip.exe /S
 #endregion
