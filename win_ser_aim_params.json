@@ -27,7 +27,7 @@
             "value": "ProdShellScript"
           },
           "customizescriptpath": {
-            "value": "https://raw.githubusercontent.com/ConnorGSM/azureaibtesting/master/testaibscript.ps1?token=Au83pqmQYrDG_4S4L18DbQKthX-heIy1ks5cpINpwA%3D%3D"
+            "value": "https://raw.githubusercontent.com/ConnorGSM/azureaibtesting/master/testaibscript.ps1"
           },
           "managedImageResGroupId": {
             "value": "/subscriptions/a553d124-d24b-4a78-a75d-37281a6ada80/resourceGroups/AIB_RG/providers/Microsoft.Compute/images/"
