@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "imagetemplatename": {
+          "value": "wintestaib01"
+          },
+          "api-version": {
+              "value": "2019-02-01-preview"
+            },
+          "svclocation": {
+              "value": "westcentralus"
+          },
+          "publisher": {
+            "value": "MicrosoftWindowsServer"
+          },
+          "offer": {
+            "value": "WindowsServer"
+          },
+          "sku": {
+            "value": "2019-Datacenter"
+          },
+          "version": {
+            "value": "2019.0.20190214"
+          },
+          "customizestepname": {
+            "value": "ProdShellScript"
+          },
+          "customizescriptpath": {
+            "value": "https://raw.githubusercontent.com/ConnorGSM/azureaibtesting/master/testaibscript.ps1?token=Au83pqmQYrDG_4S4L18DbQKthX-heIy1ks5cpINpwA%3D%3D"
+          },
+          "managedImageResGroupId": {
+            "value": "/subscriptions/a553d124-d24b-4a78-a75d-37281a6ada80/resourceGroups/AIB_RG/providers/Microsoft.Compute/images/"
+          },
+          "managedimagename": {
+            "value": "wintestaib01"
+          },
+          "destinationregion": {
+            "value": "westcentralus"
+          }
+        }
+      
+  }
