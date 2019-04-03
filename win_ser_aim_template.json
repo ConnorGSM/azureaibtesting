@@ -63,9 +63,9 @@
             },
             "customize": [
                 {
-                    "type": "Shell",
-                    "name": "[parameters('customizestepname')]",
-                    "script": "[parameters('customizescriptpath')]"
+                        "type": "PowerShell",
+                        "name": "RunScripts01",
+                        "script": "[parameters('customizescriptpath')]"
                 }
             ],
             "distribute": 
