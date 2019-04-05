@@ -62,16 +62,11 @@
                 
             },
             "customize": [
-                {
-                  "type": "PowerShell",
-                  "inline": [
-                    "mkdir C:\\AIB",
-                    "echo AIB Works > C:\\AIB\\aibproof.txt",
-                    "(New-Object System.Net.WebClient).DownloadFile(https://aibmedia.blob.core.windows.net/media/7Zip.exe, 'C:\\AIB\\7Zip.exe')",
-                    "Start-Sleep -Seconds 120",
-                    "C:\\AIB\\7Zip.exe /S"
-                  ]
-                  }
+              {
+                "type": "PowerShell",
+                "name": "RunScripts01",
+                "script": "[parameters('customizescriptpath')]"
+            }
             ],
             "distribute": 
                 [
