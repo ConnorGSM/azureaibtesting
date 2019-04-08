@@ -47,7 +47,7 @@ function install-SNMPModule {
 
 function install-epo {
         mkdir C:\Server_Agents\EPO_Installer
-        Copy-Item w:\epo\mcafeeagent-windows.zip -Destination "C:\Server_Agents\EPO_Installer\" -Force
+        (New-Object System.Net.WebClient).DownloadFile("https://aibmedia.blob.core.windows.net/media/mcafeeagent-windows.zip?sv=2018-03-28&ss=b&srt=sco&sp=rl&se=2020-01-11T20:20:39Z&st=2019-04-08T11:20:39Z&spr=https&sig=3xY%2BF0S5yZdpGzXdTj7vQhsZchOdhabNo2Vix562V0U%3D", "C:\Server_Agents\EPO_Installer\mcafeeagent-windows.zip")
         Write-Output "Downloading EPO installer zip"
         Start-Sleep -Seconds 5
         
@@ -72,7 +72,7 @@ function install-epo {
 function install-scom {
     if ("${install_scom}" -eq 'yes') {
         mkdir C:\Server_Agents\SCOM_Installer
-        Copy-Item w:\scom\SCOM_Installer.zip -Destination c:\Server_Agents\SCOM_installer -force
+        (New-Object System.Net.WebClient).DownloadFile("https://aibmedia.blob.core.windows.net/media/SCOM_Installer.zip?sv=2018-03-28&ss=b&srt=sco&sp=rl&se=2020-01-11T20:20:39Z&st=2019-04-08T11:20:39Z&spr=https&sig=3xY%2BF0S5yZdpGzXdTj7vQhsZchOdhabNo2Vix562V0U%3D", "C:\Server_Agents\SCOM_installer\SCOM_Installer.zip")
         
         Write-Output "Extracting 5"
         Expand-Archive c:\Server_Agents\SCOM_installer\SCOM_Installer.zip -DestinationPath c:\Server_Agents\SCOM_installer
@@ -95,8 +95,8 @@ function install-scom {
 function install-Qualys {
        
         Write-Output "Downloading Qualys installer zip"
-        Copy-Item w:\qualys\QualysCloudAgent.exe -Destination c:\Server_Agents -force
-        cmd /c "c:\Server_Agents\QualysCloudAgent.exe  CustomerId={9c0e25d3-3ca2-5af6-e040-10ac13043f6a} ActivationId={909fdd58-aad6-480b-a8c0-e233057e6f55}" 
+        (New-Object System.Net.WebClient).DownloadFile("https://aibmedia.blob.core.windows.net/media/QualysCloudAgent.exe?sv=2018-03-28&ss=b&srt=sco&sp=rl&se=2020-01-11T20:20:39Z&st=2019-04-08T11:20:39Z&spr=https&sig=3xY%2BF0S5yZdpGzXdTj7vQhsZchOdhabNo2Vix562V0U%3D", "C:\Server_Agents\QualysCloudAgent.exe")
+        cmd /c "C:\Server_Agents\QualysCloudAgent.exe  CustomerId={9c0e25d3-3ca2-5af6-e040-10ac13043f6a} ActivationId={909fdd58-aad6-480b-a8c0-e233057e6f55}" 
         Start-Sleep -Seconds 10  
 }
 
@@ -123,7 +123,7 @@ function install-cylance {
 		$cylance= get-service -Name CylanceSvc
 		
 		if(!$cylance) {
-			Copy-Item -Path W:\cylance\CylanceProtect_x64.msi -Destination c:\Server_Agents -Force
+			(New-Object System.Net.WebClient).DownloadFile("https://aibmedia.blob.core.windows.net/media/CylanceProtect_x64.msi?sv=2018-03-28&ss=b&srt=sco&sp=rl&se=2020-01-11T20:20:39Z&st=2019-04-08T11:20:39Z&spr=https&sig=3xY%2BF0S5yZdpGzXdTj7vQhsZchOdhabNo2Vix562V0U%3D", "C:\Server_Agents\CylanceProtect_x64.msi")
 			c:\Server_Agents\CylanceProtect_x64.msi /q /l*v c:\Server_Agents\CylanceInstall.log PIDKEY=s8PnX13jItikQYLnaX1FesvdE LAUNCHAPP=1
             Start-Sleep -Seconds 60     
         } 
@@ -138,7 +138,7 @@ function install-cylanceoptics {
        $cylance= get-service -Name CyOptics
 		
 		if(!$cylance) {
-			Copy-Item -Path W:\cylance\CylanceOPTICSSetup.exe -Destination c:\Server_Agents -Force
+			(New-Object System.Net.WebClient).DownloadFile("https://aibmedia.blob.core.windows.net/media/CylanceOPTICSSetup.exe?sv=2018-03-28&ss=b&srt=sco&sp=rl&se=2020-01-11T20:20:39Z&st=2019-04-08T11:20:39Z&spr=https&sig=3xY%2BF0S5yZdpGzXdTj7vQhsZchOdhabNo2Vix562V0U%3D", "C:\Server_Agents\CylanceOPTICSSetup.exe")
             $command = "C:\Server_Agents\CylanceOPTICSSetup.exe -s"
             Invoke-Expression $command
             Start-Sleep -Seconds 20
@@ -148,6 +148,8 @@ function install-cylanceoptics {
 
 # MAIN 
 
+config-Manager
+config-commString
 install-epo
 install-Qualys
 install-SNMPModule
@@ -155,4 +157,3 @@ install-scom
 enable_PSRemoting
 install-cylance
 install-cylanceoptics
-
