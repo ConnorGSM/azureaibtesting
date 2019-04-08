@@ -33,7 +33,7 @@
             "value": "/subscriptions/a553d124-d24b-4a78-a75d-37281a6ada80/resourceGroups/AIB_SIG_RG/providers/Microsoft.Compute/galleries/AIBSIG01/images/"
           },
           "sharedgalimagename": {
-            "value": "Windows2016"
+            "value": "WindowsServer2016"
           },
           "customizetype": {
             "value": "PowerShell"

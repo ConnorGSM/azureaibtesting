@@ -64,13 +64,6 @@
                     "version": "[parameters('version')]"
                 
             },
-            "customize": [
-                {
-                    "type": "[parameters('customizetype')]",
-                    "name": "[parameters('customizestepname')]",
-                    "script": "[parameters('customizescriptpath')]"
-                }
-            ],
             "distribute": 
                 [
                   {
