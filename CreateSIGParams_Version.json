@@ -21,7 +21,7 @@
             }
         },
         "sourceManagedImageResourceId": {
-            "value": "/subscriptions/a553d124-d24b-4a78-a75d-37281a6ada80/resourceGroups/AIB_RG/providers/Microsoft.Compute/images/Ubuntu1804LST",
+            "value": "/subscriptions/a553d124-d24b-4a78-a75d-37281a6ada80/resourceGroups/AIB_RG/providers/Microsoft.Compute/images/Ubuntu1804LTS",
             "metadata": {
                 "description": "Resource ID of the source managed image."
             }
