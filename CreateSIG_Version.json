@@ -34,10 +34,6 @@
             "apiVersion": "2018-06-01",
             "name": "[concat(parameters('galleries_name'), '/', parameters('galleryImageDefinitionName'), '/', parameters('galleryImageVersionName'))]",
             "location": "westus",
-            "dependsOn": [
-                "[resourceId('Microsoft.Compute/galleries/images', parameters('galleries_name'), parameters('galleryImageDefinitionName'))]",
-                "[resourceId('Microsoft.Compute/galleries', parameters('galleries_name'))]"
-            ],
             "tags": {
                 "releaseStatus": "staging",
                 "source": "azVmImageBuilder",
